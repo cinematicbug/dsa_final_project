@@ -12,7 +12,6 @@ struct Order {
     int urgency;
     int time;
 
-    // [NEW] Updated constructor to include address
     Order(int id, string item, string addr, int urg, int time)
         : order_id(id), item(item), address(addr), urgency(urg), time(time) {}
 };
