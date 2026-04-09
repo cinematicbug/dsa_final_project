@@ -35,7 +35,6 @@ class order_sys {
         curr_time = 0;
     }
 
-
     void add_order(int id, string item, string address, int urgency) {
         curr_time++;
         Order new_ord(id, item, address, urgency, curr_time);
@@ -44,7 +43,6 @@ class order_sys {
         string urgencyStr = (urgency == 3) ? "High" : (urgency == 2) ? "Medium" : "Low";
         cout << "> Order Added: #" << id << " - " << item << " (Urgency: " << urgencyStr << ")" << endl;
     }
-
     void proc_next_ord() {
         if (pq.empty()) {
             cout << "Order List Empty" << endl;
@@ -53,7 +51,6 @@ class order_sys {
 
         Order top_ord = pq.top();
         pq.pop();
-
 
         cout << "Preparing & Dispatching: #" << top_ord.order_id<< " - " << top_ord.item << endl;
         cout << "  > Delivering to: " << top_ord.address << endl;
@@ -82,7 +79,6 @@ int main() {
 
 
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
         cout << "Enter Food Item: ";
         getline(cin, item);
 
@@ -97,7 +93,6 @@ int main() {
         }
 
         kitchen.add_order(id, item, address, urgency);
-
         cout << "\nDo you want to add another order? (y/n): ";
         cin >> choice;
 
@@ -116,6 +111,5 @@ int main() {
     }
 
     cout << "\nAll orders dispatched!" << endl;
-
     return 0;
 }
